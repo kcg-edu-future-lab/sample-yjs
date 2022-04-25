@@ -41,24 +41,30 @@
 </style>
 </head>
 <body>
+<p>
+  <a href="https://github.com/yjs/yjs">yjs</a>を利用した共同編集機能のサンプルアプリケーションです。
+</p>
+<p>
+  同じページを開いている人同士で，編集内容が共有されます。
+</p>
 <script>
 window.addEventListener('load', () => {
-  const ydoc = new Y.Doc()
+  const ydoc = new Y.Doc();
   const provider = new WebsocketProvider(
     'wss://fungo.kcg.edu/yjs',
-    'codemirror-demo',
+    'proen34-yjs-sample',
     ydoc
-  )
-  const ytext = ydoc.getText('codemirror')
-  const editorContainer = document.createElement('div')
-  editorContainer.setAttribute('id', 'editor')
-  document.body.insertBefore(editorContainer, null)
+  );
+  const ytext = ydoc.getText('codemirror');
+  const editorContainer = document.createElement('div');
+  editorContainer.setAttribute('id', 'editor');
+  document.body.insertBefore(editorContainer, null);
   const editor = CodeMirror(editorContainer, {
     mode: 'javascript',
     lineNumbers: true
-  })
-  const binding = new CodemirrorBinding(ytext, editor, provider.awareness)
-})
+  });
+  new CodemirrorBinding(ytext, editor, provider.awareness);
+});
 </script>
 </body>
 
