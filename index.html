@@ -48,6 +48,7 @@
   同じページを開いている人同士で，編集内容が共有されます。
   ソースコードは未来環境ラボの<a href="https://github.com/kcg-edu-future-lab/sample-yjs">リポジトリ</a>にあります。
 </p>
+<div id="editorContainer"></div>
 <script>
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc();
@@ -57,9 +58,7 @@ window.addEventListener('load', () => {
     ydoc
   );
   const ytext = ydoc.getText('codemirror');
-  const editorContainer = document.createElement('div');
-  editorContainer.setAttribute('id', 'editor');
-  document.body.insertBefore(editorContainer, null);
+  const editorContainer = document.querySelector('#editorContainer');
   const editor = CodeMirror(editorContainer, {
     mode: 'javascript',
     lineNumbers: true
