@@ -4,7 +4,7 @@
 
 サーバは https://fungo.kcg.edu/yjs を利用しています。
 
-yjsでは、[CRDT(Conflict-free Replicated Data Type)](https://www.researchgate.net/publication/310212186_Near_Real-Time_Peer-to-Peer_Shared_Editing_on_Extensible_Data_Types)という
+yjsでは、[CRDT(Conflict-free Replicated Data Type)](https://hal.inria.fr/hal-00932836/file/CRDTs_SSS-2011.pdf)という
 データ共有技術が実装されています。
 
 
